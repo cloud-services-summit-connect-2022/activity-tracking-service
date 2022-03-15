@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "idSite": {
+      "type": "string"
+    },
+    "activity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "userId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36,
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        },
+        "url": {
+          "type": "string"
+        },
+        "rand": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36,
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "url",
+        "rand",
+        "type"
+      ]
+    },
+    "userInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "visitsCount": {
+          "type": "integer"
+        },
+        "prevVisitTs": {
+          "type": "integer"
+        },
+        "firstVisitTs": {
+          "type": "integer"
+        },
+        "campaign": {
+          "type": "string"
+        },
+        "localTime": {
+          "type": "string"
+        },
+        "newVisit": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "localTime"
+      ]
+    },
+    "actionInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "productId": {
+          "type": "string"
+        },
+        "search": {
+          "type": "string"
+        },
+        "searchCat": {
+          "type": "string"
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "idSite",
+    "activity",
+    "userInfo"
+  ]
+}
