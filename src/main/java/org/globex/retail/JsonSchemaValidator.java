@@ -19,7 +19,7 @@ public class JsonSchemaValidator {
     private static final Logger log = LoggerFactory.getLogger(JsonSchemaValidator.class);
 
     @ConfigProperty(name = "json.schema")
-    private String schemaFile;
+    String schemaFile;
 
     private Schema schema;
 
